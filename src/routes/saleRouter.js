@@ -1,9 +1,7 @@
 import express from "express";
-
+import * as saleController from '../controllers/saleController.js'
 const saleRouter = express.Router();
 
-saleRouter.post('/', (req, res) => {
-  res.status(200).json('sale router - post')
-})
+saleRouter.post('/', saleController.insertSale)
 
 export { saleRouter };
