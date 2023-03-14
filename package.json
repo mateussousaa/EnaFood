@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/mateussousaa/EnaFood#readme",
   "devDependencies": {
+    "dotenv": "^16.0.3",
     "eslint": "^8.36.0",
     "nodemon": "^2.0.21"
   },
