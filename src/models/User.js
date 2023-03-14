@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const { Schema, Model }= mongoose
+const { Schema }= mongoose
 
 const userSchema = new Schema({
   name: {
@@ -20,6 +20,6 @@ const userSchema = new Schema({
   }
 }, { timestamps: true })
 
-const userModel = new Model('User', userSchema)
+const userModel = new mongoose.model('User', userSchema)
 
 export default userModel;
