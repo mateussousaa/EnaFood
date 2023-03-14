@@ -1,0 +1,31 @@
+{
+  "type": "module",
+  "name": "enafood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateussousaa/EnaFood.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateussousaa/EnaFood/issues"
+  },
+  "homepage": "https://github.com/mateussousaa/EnaFood#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1"
+  }
+}
