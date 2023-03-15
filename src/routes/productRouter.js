@@ -8,4 +8,6 @@ productRouter.post('/', validateProduct, productController.insertProduct)
 
 productRouter.get('/', productController.getProducts);
 
+productRouter.put('/:id', validateProduct, productController.updateProduct)
+
 export { productRouter };

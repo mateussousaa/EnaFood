@@ -6,9 +6,10 @@ const insertProduct = async (req, res) => {
     const product = await productService.insertProduct({
       name, price, stock
     });
+
     return res.status(201).json({ product });
   } catch (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({ error: error.message });
   }
 }
 
@@ -21,4 +22,14 @@ const getProducts = async (req, res) => {
   }
 }
 
-export { insertProduct, getProducts };
+const updateProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedProduct = await productService.updateProduct(id, req.body);
+    return res.status(200).json({ product: updatedProduct });
+  } catch (error) {
+    return res.status(500).json({ error });
+  }
+}
+
+export { insertProduct, getProducts, updateProduct };
