@@ -15,6 +15,7 @@ const saleSchema = Joi.object({
   total_price: Joi.number().greater(0).required(),
   delivery_address: Joi.string().min(4).required(),
   delivery_number: Joi.string().min(11).max(14).regex(/^[0-9]+$/).required(),
+  payment: Joi.string().required(),
 })
 
 const validateSaleSchema = (sale) => {

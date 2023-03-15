@@ -15,4 +15,13 @@ const insertSale = async (req, res) => {
   }
 }
 
-export { insertSale };
+const getSales = async (req, res) => {
+  try {
+    const products = await saleService.getSales();
+    res.status(200).json({ products });
+  } catch (error) {
+    res.status(500).json({ error })
+  }
+}
+
+export { insertSale, getSales };

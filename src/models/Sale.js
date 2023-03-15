@@ -22,6 +22,10 @@ const saleSchema = new Schema({
   delivery_number: {
     type: String,
     required: true,
+  },
+  payment: {
+    type: String,
+    required: true,
   }
 });
 
