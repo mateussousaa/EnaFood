@@ -6,18 +6,18 @@ const insertProduct = async (req, res) => {
     const product = await productService.insertProduct({
       name, price, stock
     });
-    res.status(201).json({ product });
+    return res.status(201).json({ product });
   } catch (error) {
-    res.status(500).json({ error });
+    return res.status(500).json({ error });
   }
 }
 
 const getProducts = async (req, res) => {
   try {
     const products = await productService.getProducts();
-    res.status(200).json({ products })
+    return res.status(200).json({ products })
   } catch(error) {
-    res.status(500).json({ error })
+    return res.status(500).json({ error })
   }
 }
 

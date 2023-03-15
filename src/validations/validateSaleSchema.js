@@ -4,9 +4,8 @@ import joiObjectid from "joi-objectid";
 const objectId = joiObjectid(Joi);
 
 const productItem = Joi.object({
-  productId: objectId().required,
-  quantity: Joi.number().min(1).required,
-  price: Joi.number().greater(0).required,
+  productId: objectId().required(),
+  quantity: Joi.number().min(1).required(),
 })
 
 const saleSchema = Joi.object({
@@ -14,7 +13,7 @@ const saleSchema = Joi.object({
   products: Joi.array().items(productItem).required(),
   total_price: Joi.number().greater(0).required(),
   delivery_address: Joi.string().min(4).required(),
-  delivery_number: Joi.string().min(11).max(14).regex(/^[0-9]+$/).required(),
+  delivery_number: Joi.string().min(11).max(14).required(),
   payment: Joi.string().required(),
 })
 

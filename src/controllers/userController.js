@@ -12,4 +12,13 @@ const insertUser = async (req, res) => {
   }
 }
 
-export { insertUser }
+const getUsers = async (req, res) => {
+  try {
+    const users = await userService.getUsers();
+    return res.status(200).json({ users });
+  } catch (error) {
+    return res.status(500).json({ error });
+  }
+}
+
+export { insertUser, getUsers }

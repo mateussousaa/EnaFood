@@ -9,7 +9,6 @@ const saleSchema = new Schema({
       type: Schema.Types.ObjectId, ref: 'Product'
     },
     quantity: Number,
-    price: Number
   }],
   total_price: {
     type: Number,
