@@ -9,7 +9,7 @@ const validateSale = (req, res, next) => {
     delivery_address, delivery_number
   })
 
-  if (error) res.status(500).json({ error })
+  if (error) return res.status(500).json({ error })
 
   next();
 }
