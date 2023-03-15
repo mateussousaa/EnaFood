@@ -6,7 +6,7 @@ const insertProduct = async (req, res) => {
     const product = await productService.insertProduct({
       name, price, stock
     });
-    res.status(200).json({ product });
+    res.status(201).json({ product });
   } catch (error) {
     res.status(500).json({ error });
   }
