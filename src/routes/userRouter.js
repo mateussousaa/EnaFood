@@ -8,4 +8,6 @@ userRouter.post('/', validateUser, userController.insertUser)
 
 userRouter.get('/', userController.getUsers);
 
+userRouter.get('/:id', userController.getUserById);
+
 export { userRouter };

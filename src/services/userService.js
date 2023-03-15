@@ -4,4 +4,6 @@ const insertUser = async (user) => userModel.create(user);
 
 const getUsers = async () => userModel.find({});
 
-export { insertUser, getUsers }
+const getUserById = async (id) => userModel.findById(id)
+
+export { insertUser, getUsers, getUserById }
