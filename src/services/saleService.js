@@ -1,4 +1,4 @@
-import saleModel from "../models/Sale";
+import saleModel from "../models/Sale.js";
 
 const insertSale = async (sale) => saleModel.create(sale);
 

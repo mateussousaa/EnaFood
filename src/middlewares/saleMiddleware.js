@@ -1,4 +1,4 @@
-import { validateSaleSchema } from "../validations/validateSaleSchema";
+import { validateSaleSchema } from "../validations/validateSaleSchema.js";
 
 const validateSale = (req, res, next) => {
   const { userId, products, total_price,
