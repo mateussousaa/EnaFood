@@ -11,7 +11,6 @@ const productItem = Joi.object({
 
 const saleSchema = Joi.object({
   userId: objectId().required(),
-  products: Joi.array().items(productItem).required(),
   delivery_address: Joi.string().min(4).required(),
   delivery_number: Joi.string().min(11).max(14).required(),
   payment: Joi.string().required(),
@@ -23,4 +22,10 @@ const validateSaleSchema = (sale) => {
   return { error: undefined }
 }
 
-export { validateSaleSchema }
+const validateProductToSaleSchema = (product) => {
+  const { error } = productItem.validate(product);
+  if(error) return { error: error.details[0].message}
+  return { error: undefined }
+}
+
+export { validateSaleSchema, validateProductToSaleSchema }
