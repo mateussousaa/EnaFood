@@ -35,17 +35,28 @@ const insertSale = async (sale) => {
   
   return createdSale;
 }
+
 const getSales = async () => saleModel.find({});
 
-const updateSale = async (id, sale) => {
+const getSaleById = async (id) => saleModel.findById(id)
+
+const updateSale = async (id, newSale) => {
   const findedSale = await saleModel.findById(id);
   if(findedSale.status !== 'pending') throw new Error('the sale was closed');
 
-  await saleModel.findByIdAndUpdate(id, sale, { new: true })
+  // old sale products go back to stock
+  const { products } = findedSale;
+
+  await Promise.all(
+    products.map(async (p) => productModel.findByIdAndUpdate(p.productId, { stock: this.stock + p.quantity }))
+  )
+
+  // await saleModel.findByIdAndUpdate(id, sale, { new: true })
+  return newSale;
 }
 
 const prepareSale = async (id) => saleModel.findByIdAndUpdate(id, { status: 'preparing' }, { new: true })
 
 const concludeSale = async (id) => saleModel.findByIdAndUpdate(id, { status: 'conclude' }, { new: true })
 
-export { insertSale, getSales, updateSale, prepareSale, concludeSale }
+export { insertSale, getSales, getSaleById, updateSale, prepareSale, concludeSale }
