@@ -11,15 +11,14 @@ const insertSale = async (req, res) => {
 
     return res.status(201).json({ sale: insertedSale });
   } catch(error) {
-    console.log(error)
     return res.status(500).json({ error: error.message })
   }
 }
 
 const getSales = async (req, res) => {
   try {
-    const products = await saleService.getSales();
-    return res.status(200).json({ products });
+    const sales = await saleService.getSales();
+    return res.status(200).json({ sales });
   } catch (error) {
     return res.status(500).json({ error })
   }
