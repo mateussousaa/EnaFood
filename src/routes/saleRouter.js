@@ -7,4 +7,11 @@ saleRouter.post('/', validateSale, saleController.insertSale);
 
 saleRouter.get('/', saleController.getSales);
 
+saleRouter.put('/:id', validateSale, saleController.updateSale)
+
+saleRouter.patch('/:id/prepare', saleController.prepareSale)
+
+saleRouter.patch('/:id/conclude', saleController.concludeSale)
+
+
 export { saleRouter };

@@ -24,4 +24,40 @@ const getSales = async (req, res) => {
   }
 }
 
-export { insertSale, getSales };
+const updateSale = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { userId, products, delivery_address,
+      delivery_number, payment } = req.body;
+
+    const updatedSale = await saleService.updateSale(id, {
+      userId, products, delivery_address, delivery_number, payment
+    });
+
+    return res.status(200).json({ sale: updatedSale })
+  } catch (error) {
+    return res.status(500).json({ error });
+  }
+}
+
+const prepareSale = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await saleService.prepareSale(id);
+    return res.status(200).json({ message: 'preparing'})
+  } catch (error) {
+    return res.status(500).json({ error })
+  }
+}
+
+const concludeSale = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await saleService.concludeSale(id);
+    return res.status(200).json({ message: 'concluded'})
+  } catch (error) {
+    return res.status(500).json({ error })
+  }
+}
+
+export { insertSale, getSales, updateSale, prepareSale, concludeSale };

@@ -31,10 +31,21 @@ const insertSale = async (sale) => {
   const totalPrice = products.reduce((acc, product) => acc + (product.quantity * product.price), 0);
   sale.total_price = totalPrice;
   
-  const createdSale = await saleModel.create(sale);
+  const createdSale = await saleModel.create({ ...sale, status: 'pending'});
   
   return createdSale;
 }
 const getSales = async () => saleModel.find({});
 
-export { insertSale, getSales }
+const updateSale = async (id, sale) => {
+  const findedSale = await saleModel.findById(id);
+  if(findedSale.status !== 'pending') throw new Error('the sale was closed');
+
+  await saleModel.findByIdAndUpdate(id, sale, { new: true })
+}
+
+const prepareSale = async (id) => saleModel.findByIdAndUpdate(id, { status: 'preparing' }, { new: true })
+
+const concludeSale = async (id) => saleModel.findByIdAndUpdate(id, { status: 'conclude' }, { new: true })
+
+export { insertSale, getSales, updateSale, prepareSale, concludeSale }
