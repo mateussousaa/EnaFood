@@ -5,10 +5,6 @@ services:
     image: mongo
     container_name: enafood_db
     restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: enafood_user
-      MONGO_INITDB_ROOT_PASSWORD: enafood_password
-      MONGO_INITDB_DATABASE: enafood_db
     ports:
       - "27017:27017"
     volumes:

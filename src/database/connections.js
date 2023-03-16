@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import mongoose from "mongoose";
 
-const uri = `mongodb://${process.env.DB_ROOT_USERNAME}:${process.env.DB_ROOT_PASSWORD}@localhost:27017/`;
+const uri = `mongodb://${process.env.IP_ADDRESS}/${process.env.DB_DATABASE}`;
 
 const connectToDB = () => mongoose.connect(uri);
 
