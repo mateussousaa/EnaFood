@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/tests/**/*.js --exit"
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,13 @@
   },
   "homepage": "https://github.com/mateussousaa/EnaFood#readme",
   "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.36.0",
-    "nodemon": "^2.0.21"
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.21",
+    "sinon": "^15.0.2"
   },
   "dependencies": {
     "express": "^4.18.2",
