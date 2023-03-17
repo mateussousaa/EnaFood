@@ -12,14 +12,4 @@ const validateSale = (req, res, next) => {
   next();
 }
 
-const validateProductToSale = (req, res, next) => {
-  const { product } = req.body;
-
-  const { error } = validateProductToSale(product);
-
-  if(error) return res.status(500).json({ error })
-
-  next();
-}
-
-export { validateSale, validateProductToSale }
+export { validateSale }

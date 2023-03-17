@@ -30,7 +30,7 @@ const getSaleById = async (req, res) => {
     const sale = await saleService.getSaleById(id);
     return res.status(200).json({ sale })
   } catch (error) {
-    return res.status(500).json({ error})
+    return res.status(500).json({ error })
   }
 }
 
