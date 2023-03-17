@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
@@ -6,16 +6,16 @@ const saleSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   products: [{
     productId: {
-      type: Schema.Types.ObjectId, ref: 'Product'
+      type: Schema.Types.ObjectId, ref: 'Product',
     },
     price: {
       type: Number,
-      required: true
+      required: true,
     },
     quantity: {
       type: Number,
       required: true,
-    }
+    },
   }],
   total_price: {
     type: Number,
@@ -36,7 +36,7 @@ const saleSchema = new Schema({
   status: {
     type: String,
     required: true,
-  }
+  },
 });
 
 const saleModel = new mongoose.model('Sale', saleSchema);

@@ -1,4 +1,4 @@
-import * as productService from '../services/productService.js'
+import * as productService from '../services/productService.js';
 
 const insertProduct = async (req, res) => {
   try {
@@ -9,16 +9,16 @@ const insertProduct = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
-}
+};
 
 const getProducts = async (req, res) => {
   try {
     const products = await productService.getProducts();
-    return res.status(200).json({ products })
-  } catch(error) {
-    return res.status(500).json({ error })
+    return res.status(200).json({ products });
+  } catch (error) {
+    return res.status(500).json({ error });
   }
-}
+};
 
 const updateProduct = async (req, res) => {
   try {
@@ -29,6 +29,6 @@ const updateProduct = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error });
   }
-}
+};
 
 export { insertProduct, getProducts, updateProduct };
