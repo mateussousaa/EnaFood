@@ -12,10 +12,6 @@ const productSchema = new Schema({
     type: Number,
     required: true,
   },
-  stock: {
-    type: Number,
-    required: true
-  }
 })
 
 const productModel = new mongoose.model('Product', productSchema)

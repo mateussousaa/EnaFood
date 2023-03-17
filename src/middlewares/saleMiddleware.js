@@ -1,10 +1,10 @@
 import { validateSaleSchema } from "../validations/validateSaleSchema.js";
 
 const validateSale = (req, res, next) => {
-  const { userId, delivery_address, delivery_number, payment } = req.body;
+  const { userId, products, delivery_address, delivery_number, payment } = req.body;
 
   const { error } = validateSaleSchema({
-    userId, delivery_address, delivery_number, payment
+    userId, products, delivery_address, delivery_number, payment
   })
 
   if (error) return res.status(500).json({ error })
