@@ -37,16 +37,6 @@ const getSales = async (req, res) => {
   }
 }
 
-const getSaleById = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const sale = await saleService.getSaleById(id);
-    return res.status(200).json({ sale })
-  } catch (error) {
-    return res.status(500).json({ error})
-  }
-}
-
 const updateSale = async (req, res) => {
   try {
     const { id } = req.params;
@@ -59,7 +49,7 @@ const updateSale = async (req, res) => {
 
     return res.status(200).json({ sale: updatedSale })
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res.status(500).json({ error });
   }
 }
 
@@ -87,7 +77,6 @@ export {
   insertSale,
   insertProductToSale,
   getSales,
-  getSaleById,
   updateSale,
   prepareSale,
   concludeSale 

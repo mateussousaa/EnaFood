@@ -9,8 +9,6 @@ saleRouter.post('/:id/product', validateProductToSale, saleController.insertProd
 
 saleRouter.get('/', saleController.getSales);
 
-saleRouter.get('/:id', saleController.getSaleById);
-
 saleRouter.put('/:id', validateSale, saleController.updateSale)
 
 saleRouter.patch('/:id/prepare', saleController.prepareSale)
