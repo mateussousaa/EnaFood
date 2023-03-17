@@ -1,8 +1,11 @@
 import express from 'express';
 import * as saleController from '../controllers/saleController.js';
 import { validateSale } from '../middlewares/saleMiddleware.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
 
 const saleRouter = express.Router();
+
+saleRouter.use(authMiddleware);
 
 saleRouter.post('/', validateSale, saleController.insertSale);
 
