@@ -50,6 +50,16 @@ const updateSale = async (req, res) => {
   }
 }
 
+const deleteSale = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await saleService.deleteSale(id);
+    return res.status(200).json({ message: 'sale remover'});
+  } catch (error) {
+    return res.status(500).json({ error })
+  }
+}
+
 const prepareSale = async (req, res) => {
   try {
     const { id } = req.params;
@@ -70,4 +80,4 @@ const concludeSale = async (req, res) => {
   }
 }
 
-export { insertSale, getSales, getSaleById, updateSale, prepareSale, concludeSale };
+export { insertSale, getSales, getSaleById, updateSale, deleteSale, prepareSale, concludeSale };

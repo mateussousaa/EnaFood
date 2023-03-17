@@ -15,5 +15,7 @@ saleRouter.patch('/:id/prepare', saleController.prepareSale)
 
 saleRouter.patch('/:id/conclude', saleController.concludeSale)
 
+saleRouter.delete('/:id', saleController.deleteSale)
+
 
 export { saleRouter };
