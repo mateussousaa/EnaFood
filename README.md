@@ -166,7 +166,7 @@ O projeto foi dividido em quatro fases, de acordo com a escala e a complexidade 
 {
   "product": {
     "name": "fake product",
-    "price": 3,
+    "price": 10,
     "_id": "641504b35bf0e8494feaa037",
     "__v": 0
   }
@@ -205,7 +205,7 @@ O projeto foi dividido em quatro fases, de acordo com a escala e a complexidade 
 {
   "product": {
     "name": "fake product",
-    "price": 3,
+    "price": 10,
     "_id": "641504b35bf0e8494feaa037",
     "__v": 0
   }
