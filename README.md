@@ -6,12 +6,34 @@ A API EnaFood é um sistema de delivery que permite aos usuários colocar produt
 O objetivo desta API é fornecer um serviço de delivery eficiente e escalável que possa atender às necessidades de um grande número de usuários em diferentes fases do projeto.
 
 ### Como executar o projeto
-#### Para executar a API do EnaFood, siga as etapas abaixo:
 
-1. Clone o repositório em sua máquina local
-2. Execute npm install para instalar as dependências
-3. Execute npm start para iniciar o servidor localmente
-4. Acesse http://localhost:3000 no seu navegador para interagir com a API.
+#### Você precisa ter o Docker e Docker Compose instalados
+
+1. Clone o repositório em sua máquina local  -  `git clone git@github.com:mateussousaa/EnaFood.git`
+2. Entre na pasta do repositório que você acabou de clonar  -  `cd EnaFood`
+3. Execute `npm install` para instalar as dependências
+4. Renomeie o arquivo .env.example para .env  -  `mv .env.example .env`
+<details>
+
+  <summary>5. Caso tenha o MongoDB instalado mude a porta no Docker Compose</summary>
+  
+  <br>
+  
+  - 5.1. Dentro do arquivo docker-compose.yml mude o ports para `NOVA_PORTA:27017` sendo a primeira porta a que você deseja utilizar
+  
+  <br>
+  
+  - 5.2. Mude no arquivo .env a variável `IP_ADDRESS=localhost:NOVA_PORTA`
+  
+</details>
+
+<br>
+
+6. Suba o Docker Compose com o comando  -  `docker-compose up -d`
+
+<br>
+
+7. Execute `npm start` para iniciar o servidor localmente
 
 ### Tecnologias utilizadas
 Para implementar a API do EnaFood, foram utilizadas as seguintes tecnologias:
@@ -48,9 +70,9 @@ O projeto foi dividido em quatro fases, de acordo com a escala e a complexidade 
 
 </br>
 
-## Documentação da API
-
 <details>
+
+<summary><strong>Documentação da API</strong></summary>
 
 ## Usuários
 
