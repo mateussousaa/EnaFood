@@ -5,6 +5,14 @@ A API EnaFood é um sistema de delivery que permite aos usuários colocar produt
 
 O objetivo desta API é fornecer um serviço de delivery eficiente e escalável que possa atender às necessidades de um grande número de usuários em diferentes fases do projeto.
 
+### Como executar o projeto
+#### Para executar a API do EnaFood, siga as etapas abaixo:
+
+1. Clone o repositório em sua máquina local
+2. Execute npm install para instalar as dependências
+3. Execute npm start para iniciar o servidor localmente
+4. Acesse http://localhost:3000 no seu navegador para interagir com a API.
+
 ### Tecnologias utilizadas
 Para implementar a API do EnaFood, foram utilizadas as seguintes tecnologias:
 
@@ -41,6 +49,8 @@ O projeto foi dividido em quatro fases, de acordo com a escala e a complexidade 
 </br>
 
 ## Documentação da API
+
+<details>
 
 ## Usuários
 
@@ -325,3 +335,5 @@ O projeto foi dividido em quatro fases, de acordo com a escala e a complexidade 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `string` | **Obrigatório**. O ID do sales que você quer |
+
+</details>
